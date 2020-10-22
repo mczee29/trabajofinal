@@ -20,10 +20,15 @@ export class HomePage {
   public sensibilidad: number = 1;
   public inclinacion_x: number = 0;
   public inclinacion_y: number = 0;
+  public x_pos: number = 0;
+  public x_neg: number = 0;
+  public y_pos: number = 0;
+  public y_neg: number = 0;
+  public centro: number = 0;
 
   public iniciar() {
     let opciones: DeviceMotionAccelerometerOptions = {
-      frequency: 100
+      frequency: 500
     };
 
     this.subcripcion = this.motion.watchAcceleration(opciones).subscribe((acceleration: DeviceMotionAccelerationData) => {
@@ -37,7 +42,7 @@ export class HomePage {
     this.subcripcion.unsubscribe();
   }
 
-  public determinarInclinacion() {
+  /* public determinarInclinacion() {
     if (this.datos.x > this.sensibilidad) {
       this.inclinacion_x = 1;
     }
@@ -57,8 +62,37 @@ export class HomePage {
     } 
     if ((this.datos.y < this.sensibilidad) && (this.datos.y > -(this.sensibilidad))) {
       this.inclinacion_y = 0;        
-    } 
+    }  */
 
+    public determinarInclinacion() {
+      if (this.datos.x > this.sensibilidad) {
+        this.x_pos = 1;
+      } else {
+        this.x_pos = 0;
+      }
+      if (this.datos.x < (-(this.sensibilidad))) {
+        this.x_neg = 1;
+      } else {
+        this.x_neg = 0;
+      }
+      
+  
+      if (this.datos.y > this.sensibilidad) {
+        this.y_pos = 1;
+      } else {
+        this.y_pos = 0;
+      }
+      if (this.datos.y < (-(this.sensibilidad))) {
+        this.y_neg = 1;
+      } else {
+        this.y_neg = 0;
+      }
+
+      if ((this.x_neg == 0) && (this.x_pos == 0) && (this.y_neg == 0) && (this.y_pos == 0)) {
+        this.centro = 1;
+      } else {
+        this.centro = 0;
+      }
 
   }
 

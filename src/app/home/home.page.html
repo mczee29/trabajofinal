@@ -1,20 +1,36 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      McZee
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-item> 
+    <ion-button (click)="iniciar()" expand="block" >
+      Iniciar
+    </ion-button>
+  </ion-item>
+  
+  <ion-item>
+    <ion-button (click)="detener()" expand="block">
+      Detener
+    </ion-button>
+  </ion-item>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <ion-card>
+    <ion-card-content>
+      <h2>x: {{datos.x | number:'1.4-4'}}</h2>
+      <h2>y: {{datos.y | number:'1.4-4'}}</h2>
+      <h2>z: {{datos.z | number:'1.4-4'}}</h2>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-content>
+      <h2>x: {{inclinacion_x | number:'1.4-4'}}</h2>
+      <h2>y: {{inclinacion_y | number:'1.4-4'}}</h2>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

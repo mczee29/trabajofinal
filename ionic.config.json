@@ -1,0 +1,7 @@
+{
+  "name": "acelerometro",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

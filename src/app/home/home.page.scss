@@ -99,3 +99,23 @@
 .yellow {
     background-color: rgba(235, 229, 39, 1);
 }
+
+
+.img {
+  width: 80px;
+  height: 80px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  color: blue;
+}
+
+.contenedor_unitario{
+  display: flex;
+  /* background-color: chocolate; */
+  justify-content: center;
+}
+
+.contenedor_triple{
+  display: flex;
+  justify-content: space-around;
+}

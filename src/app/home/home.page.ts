@@ -16,15 +16,11 @@ export class HomePage implements OnInit{
   subcripcion: any;
 
   public sensibilidad: number = 1;
-  /* public inclinacion_x: number = 0;
-  public inclinacion_y: number = 0; */
   public x_pos: number = 0;
   public x_neg: number = 0;
   public y_pos: number = 0;
   public y_neg: number = 0;
   public centro: number = 0;
-  
-  /* public imageSource: string = '../../assets/centro_verde.png'; */
 
   public cuerpoAlerta = {
     header: "Bienvenido",
